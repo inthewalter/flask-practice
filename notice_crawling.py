@@ -1,10 +1,11 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from selenium import webdriver
 import time
 import json
 import firebase_Create # to communicate with firebase
 import my_telegram
+
+import flask_restful import Resource
 
 class NoticeCrawling :
   CODE = {
@@ -27,6 +28,12 @@ class NoticeCrawling :
     'Scholarship': 'list.php?Board=JANG_NOTICE',
     'Career': 'list.php?Board=B0364',
   }
+  def post(Resource):
+    for i in crawler.CODE :
+      # print(i)
+    # print(crawler.CODE[i])
+      crawler.crawling(i, crawler.CODE[i])
+
 
   def __init__(self) :
     self.telegram = my_telegram.MyTelegram()
