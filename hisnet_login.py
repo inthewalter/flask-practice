@@ -33,8 +33,8 @@ class HisnetLogin(Resource):
             break
           print(trs.find_all('a')[0]['href'])
           print(trs.find_all('td')[0].get_text())
-          
 
-         return login_request.status_code
+
+        return login_request.status_code
     except Exception as err:
       return {'error': str(err)}

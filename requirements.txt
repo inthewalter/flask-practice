@@ -1,3 +1,5 @@
 requests >= 2.18.4
 beautifulsoup4 >= 4.6.0
 Flask-RESTful >= 0.3.7
+telegram >= 0.0.1
+firebase_admin >= 2.16.0
