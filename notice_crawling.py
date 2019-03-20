@@ -5,9 +5,9 @@ import json
 import firebase_Create # to communicate with firebase
 import my_telegram
 
-import flask_restful import Resource
+from flask_restful import Resource
 
-class NoticeCrawling :
+class NoticeCrawling(Resource) :
   CODE = {
     'General': 'list.php?Board=NB0001',
     'GlobalLeadership': 'list.php?Board=B0020',
@@ -28,7 +28,7 @@ class NoticeCrawling :
     'Scholarship': 'list.php?Board=JANG_NOTICE',
     'Career': 'list.php?Board=B0364',
   }
-  def post(Resource):
+  def post(self):
     for i in crawler.CODE :
       # print(i)
     # print(crawler.CODE[i])
