@@ -17,13 +17,10 @@ class HisnetLogin(Resource):
       _id = args['id']
       _password = args['password']
 
-      code = crawling(_id, _password)
+      # code = crawling(_id, _password)
+      with requests.Session() as s:
+        login_reqest = s.post('https://hisnet.handong.edu/login.php/_login.php', data={"id":_id, "password":_password})
 
-      return code
+         return login_request.status_code
     except Exception as err:
       return {'error': str(err)}
-
-  def crawling(self, _id, _password):
-    with requests.Session() as s:
-      login_reqest = s.post('https://hisnet.handong.edu/login.php/_login.php', data={"id":_id, "password":_password})
-      return login_request.status_code
